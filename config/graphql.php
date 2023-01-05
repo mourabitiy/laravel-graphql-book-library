@@ -5,7 +5,7 @@ declare(strict_types = 1);
 return [
     'route' => [
         // The prefix for routes; do NOT use a leading slash!
-        'prefix' => 'graphql',
+        'prefix' => 'booksApi',
 
         // The controller/method to use in GraphQL request.
         // Also supported array syntax: `[\Rebing\GraphQL\GraphQLController::class, 'query']`
@@ -75,18 +75,20 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // ExampleQuery::class,
+                 'book' => \App\GraphQL\Queries\BookQuery::class,
+                 'books' => \App\GraphQL\Queries\BooksQuery::class,
             ],
             'mutation' => [
-                // ExampleMutation::class,
+                'createBook' => \App\GraphQL\Mutations\CreateBookMutation::class,
+                'updateBook' => \App\GraphQL\Mutations\ModifyBookMutation::class,
+                'deleteBook' => \App\GraphQL\Mutations\DeleteBookMutation::class,
             ],
-            // The types only available in this schema
             'types' => [
-                // ExampleType::class,
+                'Book' => \App\GraphQL\Types\BookType::class,
             ],
 
             // Laravel HTTP middleware
-            'middleware' => null,
+            'middleware' => [],
 
             // Which HTTP methods to support; must be given in UPPERCASE!
             'method' => ['GET', 'POST'],

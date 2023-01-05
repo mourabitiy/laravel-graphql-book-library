@@ -39,7 +39,7 @@ class BookType extends GraphQLType
                 'description' => 'The category of book',
             ],
             'page_count' => [
-                'type' => Type::nonNull(int()),
+                'type' => Type::nonNull(Type::int()),
                 'description' => 'The page count of book',
             ],
             'publisher' => [

@@ -29,6 +29,6 @@ class BookQuery extends Query{
 
     public function resolve($root, $args)
     {
-      return Book::where('id', $args['id'])->get();
+        return Book::where('id', $args['id'])->get();
     }
 }

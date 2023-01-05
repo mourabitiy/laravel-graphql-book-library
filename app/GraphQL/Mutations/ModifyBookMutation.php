@@ -73,4 +73,93 @@ class ModifyBookMutation extends Mutation{
 
         return $book;
     }
+    /* query to return all the books
+    {
+        books{
+            id
+            title
+            author
+            language
+            category
+            page_count
+            publisher
+            isbn
+        }
+    }
+    and a one to create a book
+    mutation{
+        createBook(
+            id: 55778,
+            title: "The Book of the Dead",
+            author: "John Doe",
+            language: "English",
+            category: "Horror",
+            page_count: 200,
+            publisher: "John Doe",
+            isbn: "1234567890"
+        ){
+            id
+            title
+            author
+            language
+            category
+            page_count
+            publisher
+            isbn
+        }
+    }
+    update a book
+    mutation{
+        updateBook(
+            id: 55778,
+            title: "The Book of the Dead",
+            description: "This is a book about the dead",
+            author: "John The Writer",
+            language: "English",
+            category: "Horror",
+            page_count: 200,
+            publisher: "John Doe",
+            isbn: "1234567890"
+        ){
+            id
+            title
+            author
+            language
+            category
+            page_count
+            publisher
+            isbn
+        }
+    }
+
+    delete a book
+    mutation{
+        deleteBook(
+            id: 55778
+        ){
+            id
+            title
+            author
+            language
+            category
+            page_count
+            publisher
+            isbn
+        }
+    }
+    get a book by id
+    {
+        book(id: 55778){
+            id
+            title
+            author
+            language
+            category
+            page_count
+            publisher
+            isbn
+        }
+    }
+
+    */
 }
