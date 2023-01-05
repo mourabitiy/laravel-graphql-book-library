@@ -11,6 +11,7 @@ class BookQuery extends Query{
         'name' => 'book'
     ];
 
+
     public function type(): Type
     {
         return Type::listOf(GraphQL::type('Book'));
@@ -22,13 +23,21 @@ class BookQuery extends Query{
             'id' => [
                 'name' => 'id',
                 'type' => Type::int(),
-                'rules' => ['required']
             ],
+            'isbn' => [
+                'name' => 'isbn',
+                'type' => Type::string(),
+            ]
         ];
     }
 
     public function resolve($root, $args)
     {
-        return Book::where('id', $args['id'])->get();
+        if (isset($args['id'])) {
+            return Book::where('id', $args['id'])->get();
+        } elseif (isset($args['isbn'])) {
+            return Book::where('isbn', $args['isbn'])->get();
+        }
+        return Book::all();
     }
 }

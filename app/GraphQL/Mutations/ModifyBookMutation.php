@@ -89,7 +89,6 @@ class ModifyBookMutation extends Mutation{
     and a one to create a book
     mutation{
         createBook(
-            id: 55778,
             title: "The Book of the Dead",
             author: "John Doe",
             language: "English",
@@ -98,7 +97,6 @@ class ModifyBookMutation extends Mutation{
             publisher: "John Doe",
             isbn: "1234567890"
         ){
-            id
             title
             author
             language
@@ -160,6 +158,31 @@ class ModifyBookMutation extends Mutation{
             isbn
         }
     }
-
+//get book by title now
+    {
+        book(name: "The Book of the Dead"){
+            id
+            title
+            author
+            language
+            category
+            page_count
+            publisher
+            isbn
+        }
+    }
+//get books by category
+    {
+  books(category: "fiction") {
+    id
+    title
+    author
+    language
+    category
+    page_count
+    publisher
+    isbn
+  }
+}
     */
 }

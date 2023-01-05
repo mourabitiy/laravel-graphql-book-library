@@ -60,7 +60,6 @@ class CreateBookMutation extends Mutation
         $book = new Book();
         $book->fill($args);
         $book->save();
-
         return $book;
     }
 }
