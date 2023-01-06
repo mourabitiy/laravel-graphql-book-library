@@ -145,44 +145,7 @@ class ModifyBookMutation extends Mutation{
             isbn
         }
     }
-    get a book by id
-    {
-        book(id: 55778){
-            id
-            title
-            author
-            language
-            category
-            page_count
-            publisher
-            isbn
-        }
-    }
-//get book by title now
-    {
-        book(name: "The Book of the Dead"){
-            id
-            title
-            author
-            language
-            category
-            page_count
-            publisher
-            isbn
-        }
-    }
-//get books by category
-    {
-  books(category: "fiction") {
-    id
-    title
-    author
-    language
-    category
-    page_count
-    publisher
-    isbn
-  }
-}
+
+
     */
 }

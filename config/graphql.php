@@ -77,6 +77,9 @@ return [
             'query' => [
                  'book' => \App\GraphQL\Queries\BookQuery::class,
                  'books' => \App\GraphQL\Queries\BooksQuery::class,
+                 'Login' => \App\GraphQL\Queries\UserLoginQuery::class,
+                 'Register' => \App\GraphQL\Queries\UserRegistrationQuery::class,
+
             ],
             'mutation' => [
                 'createBook' => \App\GraphQL\Mutations\CreateBookMutation::class,
@@ -85,10 +88,11 @@ return [
             ],
             'types' => [
                 'Book' => \App\GraphQL\Types\BookType::class,
+                'UserType' => \App\GraphQL\Types\UserType::class,
             ],
 
             // Laravel HTTP middleware
-            'middleware' => [],
+            'middleware' => ['api'],
 
             // Which HTTP methods to support; must be given in UPPERCASE!
             'method' => ['GET', 'POST'],
