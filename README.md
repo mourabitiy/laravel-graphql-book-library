@@ -27,7 +27,34 @@ DB_PASSWORD=[YOUR_DB_PASSWORD]
 6. To try out the endpoints, you can use a GraphQL client such as Postman, Insomnia or GraphiQL.
 
 Open the client and set the endpoint to `http://127.0.0.1:8000/booksApi`.
-Try out some of the available queries and mutations. For example, to retrieve
+Try out some of the available queries and mutations. For example, to Register
+
+<pre>
+query Register($name: String!, $email: String!, $password: String!) {
+  Register(name: $name, email: $email, password: $password) {
+      id
+      name
+      email
+  }
+}</pre>
+GRAPHQL VARIABLES
+<pre>
+{
+  "name":"xxxxxxx",
+  "email": "xxxxxxxxx@xxxx.xxx",
+  "password": "xxxxxxxxx"
+}
+</pre>
+### To login ###
+<pre>
+query Login($email: String, $password: String) {
+  Login(email: $email, password: $password) {
+    id
+    name
+    accessToken
+  }
+}
+</pre>
 ### a list of all books: ### 
 <pre>{
     books {
